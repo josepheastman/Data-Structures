@@ -37,6 +37,11 @@ class LinkedList:
         return self
 
     def delete_from_head(self):
-        if self.head == self.tail:
-            self.tail = None
-        self.head = self.head.get_next()
+        if self.head is not None:
+            previous = self.head.value
+            self.head = self.head.get_next()
+
+            if self.head == None:
+                self.tail = None
+
+            return previous
